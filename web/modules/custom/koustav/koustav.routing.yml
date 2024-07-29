@@ -5,3 +5,4 @@ koustav.simplecontent:
     _title: 'This is my first module !!'
   requirements:
     _permission: 'access content'
+    _user_is_logged_in: 'TRUE'
