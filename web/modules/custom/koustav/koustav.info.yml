@@ -1,0 +1,7 @@
+name: Koustav
+description: Creates a page showing "Hello Koustav".
+package: custom
+type: module
+core_version_requirement: ^9.4 || ^10
+dependencies:
+  - drupal:admin_toolbar
