@@ -1,0 +1,8 @@
+koustav.simplecontent:
+  path: '/mycustompath'
+  defaults: 
+    _controller: '\Drupal\koustav\Controller\KoustavController::content'
+    _title: 'This is my first module !!'
+  requirements:
+    _permission: 'access content'
+    _user_is_logged_in: 'TRUE'
