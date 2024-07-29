@@ -1,0 +1,7 @@
+name: mysite
+recipe: drupal10
+config:
+  webroot: web
+  via: nginx
+  php: 8.2
+  drush: true
