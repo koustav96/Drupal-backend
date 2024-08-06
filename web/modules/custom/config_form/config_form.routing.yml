@@ -1,0 +1,16 @@
+config_form.config:
+  path: '/admin/config/system/config-form'
+  defaults:
+    _title: 'Config'
+    _form: 'Drupal\config_form\Form\ConfigForm'
+  requirements:
+    _permission: 'administer site configuration'
+
+config_form.generate_otll:
+  path: '/admin/config/system/generate-otll'
+  defaults:
+    _title: 'One Time Login Link'
+    _form: 'Drupal\config_form\Form\GenerateOtll'
+  requirements:
+    _permission: 'administer site configuration'
+    
