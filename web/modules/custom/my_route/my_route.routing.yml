@@ -1,0 +1,15 @@
+my_route.content:
+  path: '/my-route/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\my_route\Controller\MyRouteController::content'
+  requirements:
+    _permission: 'access the custom page'
+    _role: 'administrator+content_editor'
+my_route.dynamicContent:
+  path: '/my-route/{id}'
+  defaults:
+    _title: 'Dynamic Content'
+    _controller: '\Drupal\my_route\Controller\MyRouteController::dynamicContent'
+  requirements:
+    _permission: 'access the custom page'

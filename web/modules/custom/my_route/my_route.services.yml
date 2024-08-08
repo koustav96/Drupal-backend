@@ -1,0 +1,6 @@
+services:
+  my_route.route_subscriber:
+    class: Drupal\my_route\EventSubscriber\MyRouteRouteSubscriber
+
+  my_route.access_check:
+    class: Drupal\my_route\Access\CustomAccessCheck
