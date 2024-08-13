@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Primary module hooks for node_view_counter module.
+ * Primary module hooks for node_counter module.
  */
 
 use Drupal\Core\Cache\Cache;
@@ -16,9 +16,9 @@ use Drupal\node\NodeInterface;
  * 
  * @return void
  */
-function node_counter_node_count(int $count) {
+function node_counter_my_node_count(int $count) {
   $messenger = \Drupal::messenger();
-  $messenger->addStatus(t('This node has been viewed @count times.', ['@count' => $count]));
+  $messenger->addStatus(t('This node has been visited @count times.', ['@count' => $count]));
 }
 
 /**
@@ -43,13 +43,13 @@ function node_counter_node_view(array &$build, NodeInterface $node) {
     ],
   ];
   // Get the current count.
-  $count = $session->get('node_view_count_' . $nid, 0);
+  $count = $session->get('my_count_' . $nid, 0);
   // Increment the count.
   $count++;
   // Store the count after increment.
-  $session->set('node_view_count_' . $nid, $count);
+  $session->set('my_count_' . $nid, $count);
   // Invalidate the tag after increment of session variabe.
   Cache::invalidateTags(['node:'.$nid]);
   // Show the count in status message.
-  \Drupal::moduleHandler()->invokeAll('node_count', [$count]);
+  \Drupal::moduleHandler()->invokeAll('my_node_count', [$count]);
 }
