@@ -3,4 +3,3 @@ customblock.settings:
   parent: system.admin_config_system
   route_name: customblock.settings
   weight: 10
-  
