@@ -1,0 +1,7 @@
+name: Node Access Count
+description: Count the current view.
+package: custom
+type: module
+core_version_requirement: ^9.4 || ^10
+dependencies:
+  - drupal:admin_toolbar
