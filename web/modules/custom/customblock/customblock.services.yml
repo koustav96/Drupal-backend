@@ -1,0 +1,4 @@
+services:
+  customblock.database_insert:
+    class: Drupal\customblock\Service\DatabaseInsert
+    arguments: ['@database']

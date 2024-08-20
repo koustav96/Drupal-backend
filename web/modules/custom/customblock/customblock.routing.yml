@@ -1,0 +1,15 @@
+customblock.example:
+  path: '/custom-welcome-page'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\customblock\Controller\CustomblockController::content'
+  requirements:
+    _permission: 'access content'
+
+customblock.settings:
+  path: '/config-form'
+  defaults:
+    _title: 'Form'
+    _form: 'Drupal\customblock\Form\SettingsForm'
+  requirements:
+    _permission: 'access content'
