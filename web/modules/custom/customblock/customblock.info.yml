@@ -1,0 +1,5 @@
+name: 'Customblock'
+type: module
+description: 'My custom block.'
+package: '@todo Add package'
+core_version_requirement: ^10
