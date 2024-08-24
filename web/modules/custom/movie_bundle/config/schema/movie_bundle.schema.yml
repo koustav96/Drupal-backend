@@ -1,0 +1,16 @@
+movie_bundle.award_movie.*:
+  type: config_entity
+  label: Award Movie
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: string
+      label: 'Label'
+    year:
+      type: integer
+      label: 'Year'
+    movie_name:
+      type: string
+      label: 'Movie Name'

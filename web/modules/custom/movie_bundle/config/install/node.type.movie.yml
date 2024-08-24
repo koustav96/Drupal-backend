@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - movie_bundle
+name: 'Movie'
+type: movie
+description: 'A content type for Movies.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true
