@@ -1,0 +1,7 @@
+services:
+  movie_bundle.event_subscriber:
+    class: Drupal\movie_bundle\EventSubscriber\MovieBundleSubscriber
+    arguments: ['@config.factory', '@entity_type.manager']
+    tags:
+      - { name: event_subscriber }
++
