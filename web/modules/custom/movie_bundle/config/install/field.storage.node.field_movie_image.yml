@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - movie_bundle
+id: node.field_movie_image
+field_name: field_movie_image
+entity_type: node
+type: image
+settings: {  }
+cardinality: 1
+translatable: false
+persist_with_no_fields: false
+custom_storage: false

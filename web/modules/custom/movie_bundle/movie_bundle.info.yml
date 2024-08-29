@@ -1,0 +1,5 @@
+name: 'Movie Bundle'
+type: module
+description: 'Provides a custom content type Movie with predefined fields.'
+core_version_requirement: ^10
+package: Custom
