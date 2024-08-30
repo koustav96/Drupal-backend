@@ -1,0 +1,11 @@
+entity.award_movie.overview:
+  title: Award Movies
+  parent: system.admin_config_system
+  description: 'List of award movies to extend site functionality.'
+  route_name: entity.award_movie.collection
+
+movie_bundle.settings:
+  title: Settings
+  parent: system.admin
+  route_name: movie_bundle.settings
+  weight: 10

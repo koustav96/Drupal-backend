@@ -1,0 +1,25 @@
+movie_bundle.award_movie.*:
+  type: config_entity
+  label: Award Movie
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: string
+      label: 'Label'
+    year:
+      type: integer
+      label: 'Year'
+    movie_name:
+      type: string
+      label: 'Movie Name'
+
+# Schema for the configuration files of the Movie Bundle module.
+movie_bundle.settings:
+  type: config_object
+  label: 'Movie Bundle settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'
