@@ -1,0 +1,15 @@
+events_dashboard.dashboard:
+  path: '/admin/events-dashboard'
+  defaults:
+    _controller: '\Drupal\events_dashboard\Controller\DashboardController::getEventStats'
+    _title: 'Events Dashboard'
+  requirements:
+    _permission: 'access content'
+
+events_dashboard.term_info:
+  path: '/events-dashboard/term-info'
+  defaults:
+    _controller: '\Drupal\events_dashboard\Controller\DashboardController::termInfoPage'
+    _title: 'Term Information'
+  requirements:
+    _permission: 'access content'
