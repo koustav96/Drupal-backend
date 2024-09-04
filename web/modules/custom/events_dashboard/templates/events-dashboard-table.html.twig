@@ -1,0 +1,46 @@
+<table class="events-dashboard-table">
+  <thead>
+    <tr>
+      <th>{{ 'Label' }}</th>
+      <th>{{ 'Count' }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% if yearly is not empty %}
+      <tr>
+        <td colspan="2"><strong>{{ 'Yearly Event Counts' }}</strong></td>
+      </tr>
+      {% for year, count in yearly %}
+        <tr>
+          <td>{{ year }}</td>
+          <td>{{ count }}</td>
+        </tr>
+      {% endfor %}
+    {% endif %}
+
+    {% if quarterly is not empty %}
+      <tr>
+        <td colspan="2"><strong>{{ 'Quarterly Event Counts' }}</strong></td>
+      </tr>
+      {% for quarter, count in quarterly %}
+        <tr>
+          <td>{{ quarter }}</td>
+          <td>{{ count }}</td>
+        </tr>
+      {% endfor %}
+    {% endif %}
+
+    {% if type is not empty %}
+      <tr>
+        <td colspan="2"><strong>{{ 'Event Type Counts' }}</strong></td>
+      </tr>
+      {% for type, count in type %}
+        <tr>
+          <td>{{ type }}</td>
+          <td>{{ count }}</td>
+        </tr>
+      {% endfor %}
+    {% endif %}
+  </tbody>
+</table>
+
