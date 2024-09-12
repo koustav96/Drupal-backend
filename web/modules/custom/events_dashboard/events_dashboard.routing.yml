@@ -1,7 +1,7 @@
 events_dashboard.dashboard:
   path: '/admin/events-dashboard'
   defaults:
-    _controller: '\Drupal\events_dashboard\Controller\DashboardController::getEventStats'
+    _controller: '\Drupal\events_dashboard\Controller\DashboardController::provideEventStats'
     _title: 'Events Dashboard'
   requirements:
     _permission: 'access content'
