@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="movie-info">
+    <table class="movie-info-table">
+      <thead class="movie-info-table-heading">
+        <td>City</td>
+        <td>Theatre</td>
+        <td>Timing</td>
+      </thead>
+      <tbody class="movie-info-table-body">
+      {% for movie_info in paragraph_data %}
+        <tr>
+          <td>{{movie_info.city}}</td>
+          <td>{{movie_info.theatre}}</td>
+          <td>{{movie_info.timing}}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table> 
+  </div>
+</div>
