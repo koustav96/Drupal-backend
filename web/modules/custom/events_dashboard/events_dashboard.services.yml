@@ -1,0 +1,4 @@
+services:
+  controller.dashboard:
+    class: Drupal\events_dashboard\Controller\DashboardController
+    arguments: ['@database']

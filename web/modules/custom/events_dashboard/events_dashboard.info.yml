@@ -1,0 +1,7 @@
+name: 'Events Dashboard'
+type: module
+description: 'Provides a dashboard for events statistics.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal:node

@@ -5,3 +5,8 @@ config:
   via: nginx
   php: 8.2
   drush: true
+  services:
+    pma:
+      type: phpmyadmin
+      hosts:
+        - database
