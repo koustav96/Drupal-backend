@@ -1,0 +1,58 @@
+<?php
+
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+
+function movie_bundle_node_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  if ($entity->getEntityTypeId() == 'node' && $entity->bundle() == 'movie') {
+    // $node = \Drupal::routeMatch()->getParameter('node');
+    if ($entity->hasField('field_movie_info') && !$entity->get('field_movie_info')->isEmpty()) {
+      $movie_info = [];
+      $i =0;
+      // dd($node->get('field_movie_info')->referencedEntities());
+        foreach ($entity->get('field_movie_info')->referencedEntities() as $paragraph) {
+          $city = $paragraph->get('field_city')->value;
+          $theatre = $paragraph->get('field_theatre')->value;
+          $timing = $paragraph->get('field_time')->value;
+          $time = new DrupalDateTime($timing, new \DateTimeZone('UTC'));
+          $site_timezone = \Drupal::config('system.date')->get('timezone.default');
+          $time->setTimezone(new \DateTimeZone($site_timezone));
+          $formatted_time = $time->format('g:i A');
+          $movie_info[$i] = [
+            'city' => $city,
+            'theatre' => $theatre,
+            'timing' => $formatted_time,
+          ];
+          $i++;
+        }
+      // dd($movie_info);
+    }
+    // dd($movie_info);
+    $build['movie_info'] = [
+      '#theme' => 'movie_information',
+      '#paragraph_data' => $movie_info,
+      '#attached' => [
+        'library' => [
+          'movie_bundle/movie_css',
+        ],
+      ],
+    ];
+    unset($build['field_movie_info']);
+  }
+}
+function movie_bundle_theme($existing, $type, $theme, $path) {
+  return [
+    'movie_information' => [
+        'variables' => ['paragraph_data' => []],
+        'template' => 'movie-information',
+    ],
+  ];
+}
+function movie_bundle_preprocess_html(array &$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  // dd($node->bundle());
+  if (isset($node) && $node->bundle() == 'movie') {
+    $variables['attributes']['class'][] = 'my_custom_class';
+  } 
+}
